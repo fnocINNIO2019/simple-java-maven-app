@@ -14,7 +14,7 @@ pipeline {
            
             steps {
                 withSonarQubeEnv('MySonarQube') {
-                sh "/var/lib/jenkins/tools/hudson.plugins.sonar.SonarRunnerInstallation/MySonarQubeScanner/bin/sonar-scanner"
+                sh "${scannerHome}/bin/sonar-scanner"
                 }        
                 timeout(time: 10, unit: 'MINUTES') {
                 waitForQualityGate abortPipeline: true
