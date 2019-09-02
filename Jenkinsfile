@@ -7,7 +7,7 @@ pipeline {
     }
     stages {
         
-        stage('Sonarqube') {
+        /*stage('Sonarqube') {
             environment {
             scannerHome = tool 'MySonarQubeScanner'
             }    
@@ -20,7 +20,7 @@ pipeline {
                 waitForQualityGate abortPipeline: true
                 }
            }
-        }
+        }*/
         
         stage('Build') { 
             steps {
