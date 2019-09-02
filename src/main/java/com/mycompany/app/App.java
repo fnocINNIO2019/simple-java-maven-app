@@ -7,11 +7,13 @@ public class App
 {
 
     private final String message = "Hello World!";
+    private final static String password = "7939#ddjb!HiSonarQubeVulnerability";
 
     public App() {}
 
     public static void main(String[] args) {
         System.out.println(new App().getMessage());
+        System.out.println(password);
     }
 
     private final String getMessage() {
