@@ -6,11 +6,7 @@ pipeline {
         }
     }
     stages {
-        stage('Build') { 
-            steps {
-                sh 'mvn -B -DskipTests clean package' 
-            }
-        }
+        
         stage('Sonarqube') {
             environment {
             scannerHome = tool 'MySonarQubeScanner'
@@ -24,6 +20,12 @@ pipeline {
                 waitForQualityGate abortPipeline: true
                 }
            }
+        }
+        
+        stage('Build') { 
+            steps {
+                sh 'mvn -B -DskipTests clean package' 
+            }
         }
     }
 }
